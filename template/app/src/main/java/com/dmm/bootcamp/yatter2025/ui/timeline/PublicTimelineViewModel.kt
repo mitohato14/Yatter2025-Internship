@@ -24,4 +24,12 @@ class PublicTimelineViewModel(
             )
         }
     }
+
+    fun onResume() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoading = true) }
+            fetchPublicTimeline()
+            _uiState.update { it.copy(isLoading = false) }
+        }
+    }
 }
