@@ -12,5 +12,6 @@ data class PublicTimelineUiState(
             yweetList = emptyList(),
             isLoading = false,
             isRefreshing = false,
+        )
     }
 }
