@@ -1,8 +1,7 @@
-package com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel
+package com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel.converter
 
 import com.dmm.bootcamp.yatter2025.domain.model.Yweet
 import com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel.YweetBindingModel
-import com.dmm.bootcamp.yatter2025.ui.timeline.converter.ImageConverter
 
 object YweetConverter{
     fun convertToBindingModel(yweetList: List<Yweet>): List<YweetBindingModel> = yweetList.map { convertToBindingModel(it) }

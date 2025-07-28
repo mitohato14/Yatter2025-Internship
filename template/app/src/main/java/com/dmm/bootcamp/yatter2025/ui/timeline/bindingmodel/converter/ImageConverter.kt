@@ -1,4 +1,4 @@
-package com.dmm.bootcamp.yatter2025.ui.timeline.converter
+package com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel.converter
 
 import com.dmm.bootcamp.yatter2025.domain.model.Image
 import com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel.ImageBindingModel
