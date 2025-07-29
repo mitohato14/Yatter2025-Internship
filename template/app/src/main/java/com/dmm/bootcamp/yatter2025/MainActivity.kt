@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.Surface
+import com.dmm.bootcamp.yatter2025.ui.login.LoginPage
 import com.dmm.bootcamp.yatter2025.ui.theme.Yatter2025Theme
 import com.dmm.bootcamp.yatter2025.ui.timeline.PublicTimelinePage
 
@@ -15,7 +16,8 @@ class MainActivity : AppCompatActivity() {
     setContent {
       Yatter2025Theme {
         Surface {
-          PublicTimelinePage()
+          LoginPage()
+//          PublicTimelinePage()
         }
       }
     }
