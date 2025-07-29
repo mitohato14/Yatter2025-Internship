@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.dmm.bootcamp.yatter2025.common.navigation.Destination
 import com.dmm.bootcamp.yatter2025.domain.model.Password
 import com.dmm.bootcamp.yatter2025.domain.model.Username
+import com.dmm.bootcamp.yatter2025.ui.timeline.PublicTimelineDestination
 import com.dmm.bootcamp.yatter2025.usecase.login.LoginUseCase
 import com.dmm.bootcamp.yatter2025.usecase.login.LoginUseCaseResult
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -57,7 +58,11 @@ class LoginViewModel(
                 )
             ) {
                 is LoginUseCaseResult.Success -> {
-
+                    _destination.value = PublicTimelineDestination {
+                        popUpTo(LoginDestination().route) {
+                            inclusive = true
+                        }
+                    }
                 }
 
                 is LoginUseCaseResult.Failure -> {
@@ -74,6 +79,6 @@ class LoginViewModel(
     }
 
     fun onCompleteNavigation() {
-
+        _destination.value = null
     }
 }
