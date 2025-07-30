@@ -12,8 +12,19 @@ object UserConverter {
     username = Username(json.username),
     displayName = json.displayName,
     note = json.note,
-    avatar = json.avatar?.let { URL(it) },
-    header = json.header?.let { URL(it) },
+    avatar = json.avatar?.let {
+      if (it.isBlank()) {
+        null
+      } else {
+        URL(it)
+      }
+                              },
+    header = json.header?.let {
+      if (it.isBlank()) {
+      null
+    } else {
+      URL(it)
+    } },
     followingCount = json.followingCount,
     followerCount = json.followersCount,
   )
