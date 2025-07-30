@@ -98,7 +98,7 @@ fun RegisterUserTemplate(
                     style = MaterialTheme.typography.body2
                 )
                 TextButton(
-                    onClick = onClickRegister,
+                    onClick = onClickLogin,
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text("ログイン")
