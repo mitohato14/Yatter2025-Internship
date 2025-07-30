@@ -15,10 +15,6 @@ data class RegisterUserUiState(
             registerUserBindingModel = RegisterUserBindingModel(
                 username = "",
                 password = "",
-                displayName = "",
-                avatar = null,
-                header = null,
-                note = "",
             ),
             isLoading = false,
             validUsername = false,
