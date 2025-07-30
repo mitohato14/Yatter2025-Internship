@@ -1,17 +1,17 @@
-package com.dmm.bootcamp.yatter2025.ui.timeline
+package com.dmm.bootcamp.yatter2025.ui.timeline.hometimeline
 
 import com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel.YweetBindingModel
 
-data class PublicTimelineUiState(
+data class HomeTimelineUiState(
     val yweetList: List<YweetBindingModel>,
     val isLoading: Boolean,
-    val isRefreshing: Boolean
+    val isRefleshing: Boolean,
 ) {
     companion object {
-        fun empty(): PublicTimelineUiState = PublicTimelineUiState(
+        fun empty(): HomeTimelineUiState = HomeTimelineUiState(
             yweetList = emptyList(),
             isLoading = false,
-            isRefreshing = false,
+            isRefleshing = false,
         )
     }
 }

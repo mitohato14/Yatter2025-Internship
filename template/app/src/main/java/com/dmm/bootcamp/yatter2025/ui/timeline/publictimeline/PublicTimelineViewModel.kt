@@ -1,4 +1,4 @@
-package com.dmm.bootcamp.yatter2025.ui.timeline
+package com.dmm.bootcamp.yatter2025.ui.timeline.publictimeline
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -15,7 +15,9 @@ import kotlinx.coroutines.launch
 class PublicTimelineViewModel(
     private val yweetRepository: YweetRepository,
     ) : ViewModel() {
-    private val _uiState: MutableStateFlow<PublicTimelineUiState> = MutableStateFlow(PublicTimelineUiState.empty())
+    private val _uiState: MutableStateFlow<PublicTimelineUiState> = MutableStateFlow(
+        PublicTimelineUiState.empty()
+    )
     val uiState: StateFlow<PublicTimelineUiState> = _uiState.asStateFlow()
 
     private val _destination = MutableStateFlow<Destination?>(null)

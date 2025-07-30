@@ -6,7 +6,7 @@ import com.dmm.bootcamp.yatter2025.common.navigation.Destination
 import com.dmm.bootcamp.yatter2025.domain.model.Password
 import com.dmm.bootcamp.yatter2025.domain.model.Username
 import com.dmm.bootcamp.yatter2025.ui.login.LoginDestination
-import com.dmm.bootcamp.yatter2025.ui.timeline.PublicTimelineDestination
+import com.dmm.bootcamp.yatter2025.ui.timeline.publictimeline.PublicTimelineDestination
 import com.dmm.bootcamp.yatter2025.usecase.register.RegisterUserUseCase
 import com.dmm.bootcamp.yatter2025.usecase.register.RegisterUserUseCaseResult
 import kotlinx.coroutines.flow.MutableStateFlow
