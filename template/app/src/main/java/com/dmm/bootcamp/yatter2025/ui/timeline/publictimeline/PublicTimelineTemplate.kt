@@ -1,4 +1,4 @@
-package com.dmm.bootcamp.yatter2025.ui.timeline
+package com.dmm.bootcamp.yatter2025.ui.timeline.publictimeline
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dmm.bootcamp.yatter2025.ui.theme.Yatter2025Theme
+import com.dmm.bootcamp.yatter2025.ui.timeline.YweetRow
 import com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel.YweetBindingModel
 
 @OptIn(ExperimentalMaterialApi::class)

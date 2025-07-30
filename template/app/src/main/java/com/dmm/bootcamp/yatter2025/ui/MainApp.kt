@@ -12,7 +12,7 @@ import androidx.navigation.compose.rememberNavController
 import com.dmm.bootcamp.yatter2025.ui.login.LoginDestination
 import com.dmm.bootcamp.yatter2025.ui.post.PostDestination
 import com.dmm.bootcamp.yatter2025.ui.register.RegisterUserDestination
-import com.dmm.bootcamp.yatter2025.ui.timeline.PublicTimelineDestination
+import com.dmm.bootcamp.yatter2025.ui.timeline.publictimeline.PublicTimelineDestination
 import org.koin.androidx.compose.getViewModel
 
 val LocalNavController = compositionLocalOf<NavController> {

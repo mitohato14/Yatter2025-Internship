@@ -1,4 +1,4 @@
-package com.dmm.bootcamp.yatter2025.ui.timeline
+package com.dmm.bootcamp.yatter2025.ui.timeline.publictimeline
 
 import com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel.YweetBindingModel
 

@@ -1,4 +1,4 @@
-package com.dmm.bootcamp.yatter2025.ui.timeline
+package com.dmm.bootcamp.yatter2025.ui.timeline.publictimeline
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
