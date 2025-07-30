@@ -1,4 +1,19 @@
 package com.dmm.bootcamp.yatter2025.ui.timeline.hometimeline
 
-class HomeTimelineDestination {
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavOptionsBuilder
+import androidx.navigation.compose.composable
+import com.dmm.bootcamp.yatter2025.common.navigation.Destination
+
+class HomeTimelineDestination(
+    builder: (NavOptionsBuilder.() -> Unit)? = null,
+): Destination(ROUTE, builder) {
+    companion object {
+        private const val ROUTE = "homeTimeline"
+        fun createNode(builder: NavGraphBuilder) {
+            builder.composable(ROUTE) {
+                HomeTimelinePage()
+            }
+        }
+    }
 }

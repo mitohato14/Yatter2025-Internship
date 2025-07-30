@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.dmm.bootcamp.yatter2025.common.navigation.Destination
 import com.dmm.bootcamp.yatter2025.domain.service.CheckLoginService
 import com.dmm.bootcamp.yatter2025.ui.login.LoginDestination
+import com.dmm.bootcamp.yatter2025.ui.timeline.hometimeline.HomeTimelineDestination
 import com.dmm.bootcamp.yatter2025.ui.timeline.publictimeline.PublicTimelineDestination
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -20,7 +21,8 @@ class MainViewModel(
     fun onCreate() {
         viewModelScope.launch {
             if(checkLoginService.execute()) {
-                _startDestination.value = PublicTimelineDestination()
+//                _startDestination.value = PublicTimelineDestination()
+                _startDestination.value = HomeTimelineDestination()
             } else {
                 _startDestination.value = LoginDestination()
             }
