@@ -34,11 +34,11 @@ fun PublicTimelineTemplate(
     yweetList: List<YweetBindingModel>,
     isLoading: Boolean,
     isRefreshing: Boolean,
-    onReflesh: () -> Unit,
-    onCliclkPost: () -> Unit,
+    onRefresh: () -> Unit,
+    onClickPost: () -> Unit,
     onClickYweet: (yweetId: String) -> Unit,
 ) {
-    val pullRefreshState = rememberPullRefreshState(isRefreshing, onReflesh)
+    val pullRefreshState = rememberPullRefreshState(isRefreshing, onRefresh)
     Scaffold(
         topBar = {
             TopAppBar(
@@ -48,7 +48,7 @@ fun PublicTimelineTemplate(
             )
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = onCliclkPost) {
+            FloatingActionButton(onClick = onClickPost) {
                 Icon(
                     imageVector = Icons.Default.Add,
                     contentDescription = "post"
@@ -118,8 +118,8 @@ private fun PublicTimelineTemplatePreview() {
                 ),
                 isLoading = true,
                 isRefreshing = false,
-                onReflesh = {},
-                onCliclkPost = {},
+                onRefresh = {},
+                onClickPost = {},
                 onClickYweet = {},
             )
         }

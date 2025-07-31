@@ -32,8 +32,8 @@ fun PublicTimelinePage(
         yweetList = uiState.yweetList,
         isLoading = uiState.isLoading,
         isRefreshing = uiState.isRefreshing,
-        onReflesh = publicTimelineViewModel::onRefresh,
-        onCliclkPost = publicTimelineViewModel::onClickPost,
+        onRefresh = publicTimelineViewModel::onRefresh,
+        onClickPost = publicTimelineViewModel::onClickPost,
         onClickYweet = publicTimelineViewModel::onClickYweet
     )
 }
