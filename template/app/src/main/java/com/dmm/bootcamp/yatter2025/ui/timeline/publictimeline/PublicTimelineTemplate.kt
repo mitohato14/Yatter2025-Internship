@@ -37,6 +37,7 @@ fun PublicTimelineTemplate(
     onRefresh: () -> Unit,
     onClickPost: () -> Unit,
     onClickYweet: (yweetId: String) -> Unit,
+    onClickAvater: (username: String) -> Unit,
 ) {
     val pullRefreshState = rememberPullRefreshState(isRefreshing, onRefresh)
     Scaffold(
@@ -68,7 +69,7 @@ fun PublicTimelineTemplate(
                 contentPadding = PaddingValues(8.dp),
             ) {
                 items(yweetList) { item ->
-                    YweetRow(yweetBindingModel = item, onClickYweet = onClickYweet)
+                    YweetRow(yweetBindingModel = item, onClickYweet = onClickYweet, onClickAvatar = onClickAvater)
                 }
             }
             PullRefreshIndicator(
@@ -121,6 +122,7 @@ private fun PublicTimelineTemplatePreview() {
                 onRefresh = {},
                 onClickPost = {},
                 onClickYweet = {},
+                onClickAvater = {},
             )
         }
     }

@@ -1,5 +1,6 @@
 package com.dmm.bootcamp.yatter2025.ui.timeline.postdetail
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -37,6 +38,7 @@ fun PostDetailTemplate(
     yweetBindingModel: YweetBindingModel,
     isLoading: Boolean,
     onClickNavIcon: () -> Unit,
+    onClickAvatar: (username: String) -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -74,7 +76,10 @@ fun PostDetailTemplate(
                     ) {
                         AsyncImage(
                             modifier = Modifier
-                                .size(64.dp),
+                                .size(64.dp)
+                                .clickable {
+                                    onClickAvatar(yweetBindingModel.username)
+                                },
                             model = yweetBindingModel.avatar,
                             contentDescription = "アバター画像",
                             contentScale = ContentScale.Crop
@@ -131,7 +136,8 @@ fun PostDetailTemplatePreview() {
                     )
                 ),
                 isLoading = false,
-                onClickNavIcon = {}
+                onClickNavIcon = {},
+                onClickAvatar = {}
             )
         }
     }

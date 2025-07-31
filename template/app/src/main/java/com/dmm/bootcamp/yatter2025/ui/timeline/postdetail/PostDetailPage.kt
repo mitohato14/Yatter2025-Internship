@@ -24,16 +24,13 @@ fun PostDetailPage(
     }
 
     LifecycleEventEffect(event= Lifecycle.Event.ON_CREATE) {
-        postDetailViewModel.onResume(yweetId)
+        postDetailViewModel.onCreate(yweetId)
     }
-
-//    LifecycleEventEffect(event = Lifecycle.Event.ON_RESUME) {
-//        postDetailViewModel.onResume(yweetId)
-//    }
 
     PostDetailTemplate(
         yweetBindingModel = uiState.yweet,
         isLoading = uiState.isLoading,
-        onClickNavIcon = postDetailViewModel::onClickNavIcon
+        onClickNavIcon = postDetailViewModel::onClickNavIcon,
+        onClickAvatar = postDetailViewModel::onClickAvatar
     )
 }
