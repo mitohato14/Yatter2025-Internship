@@ -3,6 +3,7 @@ package com.dmm.bootcamp.yatter2025.di
 import com.dmm.bootcamp.yatter2025.ui.MainViewModel
 import com.dmm.bootcamp.yatter2025.ui.login.LoginViewModel
 import com.dmm.bootcamp.yatter2025.ui.post.PostViewModel
+import com.dmm.bootcamp.yatter2025.ui.profile.UserProfileViewModel
 import com.dmm.bootcamp.yatter2025.ui.register.RegisterUserViewModel
 import com.dmm.bootcamp.yatter2025.ui.timeline.postdetail.PostDetailViewModel
 import com.dmm.bootcamp.yatter2025.ui.timeline.hometimeline.HomeTimelineViewModel
@@ -18,4 +19,5 @@ internal val viewModelModule = module {
   viewModel { LoginViewModel(get()) }
   viewModel { HomeTimelineViewModel(get())}
   viewModel { PostDetailViewModel(get()) }
+  viewModel { UserProfileViewModel(get()) }
 }

@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.dmm.bootcamp.yatter2025.ui.login.LoginDestination
 import com.dmm.bootcamp.yatter2025.ui.post.PostDestination
+import com.dmm.bootcamp.yatter2025.ui.profile.UserProfileDestination
 import com.dmm.bootcamp.yatter2025.ui.register.RegisterUserDestination
 import com.dmm.bootcamp.yatter2025.ui.timeline.postdetail.PostDetailDestination
 import com.dmm.bootcamp.yatter2025.ui.timeline.hometimeline.HomeTimelineDestination
@@ -48,6 +49,7 @@ fun MainApp(
                 PostDestination.createNode(this)
                 HomeTimelineDestination.createNode(this)
                 PostDetailDestination.createNode(this)
+                UserProfileDestination.createNode(this)
             }
         }
     }

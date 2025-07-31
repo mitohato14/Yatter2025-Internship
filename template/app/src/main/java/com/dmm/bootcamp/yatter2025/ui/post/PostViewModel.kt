@@ -5,6 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.dmm.bootcamp.yatter2025.common.navigation.Destination
 import com.dmm.bootcamp.yatter2025.common.navigation.PopBackDestination
 import com.dmm.bootcamp.yatter2025.domain.service.GetLoginUserService
+import com.dmm.bootcamp.yatter2025.ui.profile.UserProfileDestination
+import com.dmm.bootcamp.yatter2025.ui.timeline.publictimeline.PublicTimelineDestination
 import com.dmm.bootcamp.yatter2025.usecase.post.PostYweetUseCase
 import com.dmm.bootcamp.yatter2025.usecase.post.PostYweetUseCaseResult
 import kotlinx.coroutines.flow.MutableStateFlow
