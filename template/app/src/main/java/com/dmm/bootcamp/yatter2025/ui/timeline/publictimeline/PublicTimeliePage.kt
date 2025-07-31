@@ -34,6 +34,7 @@ fun PublicTimelinePage(
         isRefreshing = uiState.isRefreshing,
         onReflesh = publicTimelineViewModel::onRefresh,
         onCliclkPost = publicTimelineViewModel::onClickPost,
-        onClickYweet = publicTimelineViewModel::onClickYweet
+        onClickYweet = publicTimelineViewModel::onClickYweet,
+        onClickAvater = publicTimelineViewModel::onClickAvatar
     )
 }

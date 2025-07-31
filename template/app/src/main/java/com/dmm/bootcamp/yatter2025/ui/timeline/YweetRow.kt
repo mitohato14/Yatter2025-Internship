@@ -39,6 +39,7 @@ fun YweetRow(
     yweetBindingModel: YweetBindingModel,
     modifier: Modifier = Modifier,
     onClickYweet: (yweetId: String) -> Unit,
+    onClickAvatar: (username: String) -> Unit = {}
 ) {
     val context = LocalContext.current
 
@@ -57,7 +58,10 @@ fun YweetRow(
         horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         AsyncImage(
-            modifier = modifier,
+            modifier = modifier
+                .clickable {
+                    onClickAvatar(yweetBindingModel.username)
+                },
             model = ImageRequest.Builder(context)
                 .data(yweetBindingModel)
                 .placeholder(placeholder)
