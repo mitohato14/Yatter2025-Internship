@@ -1,10 +1,10 @@
 package com.dmm.bootcamp.yatter2025.ui.profile
 
+import android.util.Log
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import coil.request.ImageRequest
 import com.dmm.bootcamp.yatter2025.common.navigation.Destination
 
 class UserProfileDestination(
@@ -14,7 +14,7 @@ class UserProfileDestination(
         return buildString {
             append(ROUTE_PATH)
             if (username != null) {
-                append("$KEY_USERNAME=$username")
+                append("?$KEY_USERNAME=$username")
             }
         }
     }
