@@ -2,7 +2,7 @@ package com.dmm.bootcamp.yatter2025.ui.profile
 
 import com.dmm.bootcamp.yatter2025.ui.profile.bindinmodel.UserBindingModel
 
-class UserProfileUiState(
+data class UserProfileUiState(
     val userBindingModel: UserBindingModel,
     val isLoading: Boolean,
     val isRefreshing: Boolean,
