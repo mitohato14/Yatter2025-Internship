@@ -8,10 +8,14 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.pullrefresh.PullRefreshIndicator
 import androidx.compose.material.pullrefresh.pullRefresh
 import androidx.compose.material.pullrefresh.rememberPullRefreshState
@@ -27,12 +31,21 @@ import com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel.YweetBindingModel
 @Composable
 fun PublicTimelineTemplate(
 
+    onClickPost: () -> Unit,
     yweetList: List<YweetBindingModel>,
     isLoading: Boolean,
     isRefreshing: Boolean,
     onRefresh: () -> Unit,
 ) {
     Scaffold(
+        floatingActionButton = {
+            FloatingActionButton(onClick = onClickPost) {
+                Icon(
+                    imageVector = Icons.Default.Add,
+                    contentDescription = "post"
+                )
+            }
+        },
         topBar = {
             TopAppBar(
                 title = {
@@ -80,6 +93,10 @@ fun PublicTimelineTemplate(
             Yatter2025Theme {
                 Surface {
                     PublicTimelineTemplate(
+                        isLoading = true,
+                        isRefreshing = false,
+                        onRefresh = {},
+                        onClickPost = {},
                         yweetList = listOf(
                             YweetBindingModel(
                                 id = "id1",
@@ -98,9 +115,7 @@ fun PublicTimelineTemplate(
                                 attachmentImageList = listOf()
                             ),
                         ),
-                        isLoading = true,
-                        isRefreshing = false,
-                        onRefresh = {}
+
                     )
                 }
             }
