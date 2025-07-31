@@ -106,7 +106,7 @@ interface UserRepository {
 interface YweetRepository {
   ...
   suspend fun create(
-    yweet: String,
+    cpntent: String,
     attachmentList: List<File>,
   ): Yweet
 }
