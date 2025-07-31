@@ -15,7 +15,6 @@ class PostDetailDestination(
             append(ROUTE_PATH)
             if (yweetId != null) {
                 append("?$KEY_YWEET_ID=$yweetId")
-                Log.d("PostDetailDestination", "buildRoute: $yweetId")
             }
         }
     }
@@ -25,7 +24,6 @@ class PostDetailDestination(
         private const val ROUTE = "$ROUTE_PATH?$KEY_YWEET_ID={$KEY_YWEET_ID}"
 
         fun createNode(builder: NavGraphBuilder) {
-            Log.d("PostDetailDestination", "createNode: ")
             builder.composable(
                 route = ROUTE,
                 arguments = listOf(
