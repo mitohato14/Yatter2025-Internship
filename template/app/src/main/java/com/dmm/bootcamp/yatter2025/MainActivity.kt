@@ -1,10 +1,10 @@
 package com.dmm.bootcamp.yatter2025
 
-import PublicTimelinePage
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.Surface
+import com.dmm.bootcamp.yatter2025.ui.MainApp
 import com.dmm.bootcamp.yatter2025.ui.theme.Yatter2025Theme
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +15,9 @@ class MainActivity : AppCompatActivity() {
     setContent {
       Yatter2025Theme {
         Surface {
-          PublicTimelinePage()
+          MainApp()
+//          LoginPage()
+//          PublicTimelinePage()
         }
       }
     }
