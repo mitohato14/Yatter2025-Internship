@@ -1,4 +1,4 @@
-package com.dmm.bootcamp.yatter2025.ui.timeline
+package com.dmm.bootcamp.yatter2025.ui.timeline.postdetail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

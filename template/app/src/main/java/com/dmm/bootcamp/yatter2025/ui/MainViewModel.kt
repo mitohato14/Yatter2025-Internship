@@ -21,8 +21,8 @@ class MainViewModel(
     fun onCreate() {
         viewModelScope.launch {
             if(checkLoginService.execute()) {
-//                _startDestination.value = PublicTimelineDestination()
-                _startDestination.value = HomeTimelineDestination()
+                _startDestination.value = PublicTimelineDestination()
+//                _startDestination.value = HomeTimelineDestination()
             } else {
                 _startDestination.value = LoginDestination()
             }

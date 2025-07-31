@@ -34,6 +34,7 @@ fun HomeTimelinePage(
         isLoading = uiState.isLoading,
         isRefreshing = uiState.isRefleshing,
         onRefresh = homeTimelineViewModel::onRefresh,
-        onClickPost = homeTimelineViewModel::onClickPost
+        onClickPost = homeTimelineViewModel::onClickPost,
+        onClickYweet = homeTimelineViewModel::onClickYweet
     )
 }

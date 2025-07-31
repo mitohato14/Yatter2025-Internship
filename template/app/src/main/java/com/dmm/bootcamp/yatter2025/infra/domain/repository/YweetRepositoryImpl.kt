@@ -17,7 +17,8 @@ class YweetRepositoryImpl(
   private val tokenProvider: TokenProvider,
 ) : YweetRepository {
   override suspend fun findById(id: YweetId): Yweet? {
-    TODO("Not yet implemented")
+    val yweet = yatterApi.getYweetById(id.value)
+    return YweetConverter.convertToDomainModel(yweet)
   }
 
   override suspend fun findAllPublic(): List<Yweet> = withContext(IO) {

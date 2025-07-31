@@ -50,4 +50,9 @@ interface YatterApi {
     @Header("Authentication") token: String,
     @Body yweetJson: PostYweetJson
   ): YweetJson
+
+  @GET("yweets/{id}")
+  suspend fun getYweetById(
+    @Path("id") yweetId: String
+  ): YweetJson
 }

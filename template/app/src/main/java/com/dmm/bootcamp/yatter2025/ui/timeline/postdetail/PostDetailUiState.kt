@@ -1,6 +1,5 @@
-package com.dmm.bootcamp.yatter2025.ui.timeline
+package com.dmm.bootcamp.yatter2025.ui.timeline.postdetail
 
-import com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel.ImageBindingModel
 import com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel.YweetBindingModel
 
 data class PostDetailUiState(
