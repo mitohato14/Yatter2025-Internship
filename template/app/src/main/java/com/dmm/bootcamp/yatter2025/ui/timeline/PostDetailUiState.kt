@@ -13,16 +13,9 @@ data class PostDetailUiState(
                 id = "",
                 displayName = "",
                 username = "",
-                avatar = "",
+                avatar = null,
                 content = "",
-                attachmentImageList = listOf(
-                    ImageBindingModel(
-                        id = "",
-                        type = "image",
-                        url = "",
-                        description = ""
-                    )
-                )
+                attachmentImageList = listOf()
             ),
             isLoading = false
         )
