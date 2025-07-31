@@ -33,7 +33,7 @@ fun PublicTimelinePage(
         isLoading = uiState.isLoading,
         isRefreshing = uiState.isRefreshing,
         onRefresh = publicTimelineViewModel::onRefresh,
-        onClikPost = publicTimelineViewModel::onClickPost,
+        onClickPost = publicTimelineViewModel::onClickPost,
         onClickYweet = publicTimelineViewModel::onClickYweet,
         onClickAvater = publicTimelineViewModel::onClickAvatar
     )
