@@ -1,0 +1,16 @@
+package com.dmm.bootcamp.yatter2025.ui.profile
+
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+
+@Composable
+fun UserProfileTemplate(modifier: Modifier = Modifier) {
+
+}
+
+@Preview
+@Composable
+fun UserProfileTemplatePreview(modifier: Modifier = Modifier) {
+
+}
