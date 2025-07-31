@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.dmm.bootcamp.yatter2025.common.navigation.Destination
 import com.dmm.bootcamp.yatter2025.domain.repository.YweetRepository
 import com.dmm.bootcamp.yatter2025.ui.post.PostDestination
+import com.dmm.bootcamp.yatter2025.ui.timeline.postdetail.PostDetailDestination
 import com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel.converter.YweetConverter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -50,6 +51,10 @@ class PublicTimelineViewModel(
 
     fun onClickPost() {
         _destination.value = PostDestination()
+    }
+
+    fun onClickYweet(yweetId: String) {
+        _destination.value = PostDetailDestination(yweetId)
     }
 
     fun onCompleteNavigation() {
