@@ -45,6 +45,14 @@ class UserProfileViewModel(
         }
     }
 
+    fun onRefresh(username: String) {
+        viewModelScope.launch {
+            _uiState.update { it.copy( isRefreshing = true ) }
+            fetchUserProfile(username)
+            _uiState.update { it.copy( isRefreshing = false )  }
+        }
+    }
+
     fun onCompleteNavigation() {
         _destination.value = null
     }
