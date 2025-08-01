@@ -1,4 +1,4 @@
-package com.dmm.bootcamp.yatter2025.ui.timeline.hometimeline
+package com.dmm.bootcamp.yatter2025.ui.timeline
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -8,14 +8,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.FloatingActionButton
-import androidx.compose.material.Icon
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.pullrefresh.PullRefreshIndicator
 import androidx.compose.material.pullrefresh.pullRefresh
 import androidx.compose.material.pullrefresh.rememberPullRefreshState
@@ -25,74 +18,52 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dmm.bootcamp.yatter2025.ui.theme.Yatter2025Theme
-import com.dmm.bootcamp.yatter2025.ui.timeline.YweetRow
 import com.dmm.bootcamp.yatter2025.ui.timeline.bindingmodel.YweetBindingModel
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun HomeTimelineTemplate(
+fun TimelineBlockTemplate(
     yweetList: List<YweetBindingModel>,
     isLoading: Boolean,
     isRefreshing: Boolean,
     onRefresh: () -> Unit,
     onClickPost: () -> Unit,
     onClickYweet: (yweetId: String) -> Unit,
-    onClickAvatar: (username: String) -> Unit,
+    onClickAvater: (username: String) -> Unit,
 ) {
     val pullRefreshState = rememberPullRefreshState(isRefreshing, onRefresh)
-    Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text("フォロー中")
-                }
-            )
-        },
-        floatingActionButton = {
-            FloatingActionButton(onClick = onClickPost) {
-                Icon(
-                    imageVector = Icons.Default.Add,
-                    contentDescription = "post"
-                )
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .pullRefresh(pullRefreshState),
+        contentAlignment = Alignment.Center,
+    ) {
+        LazyColumn(
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = PaddingValues(8.dp),
+        ) {
+            items(yweetList) { item ->
+                YweetRow(yweetBindingModel = item, onClickYweet = onClickYweet, onClickAvatar = onClickAvater)
             }
         }
-    ) { paddingValues ->
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues)
-                .pullRefresh(pullRefreshState),
-            contentAlignment = Alignment.Center,
-        ) {
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize(),
-                contentPadding = PaddingValues(8.dp),
-            ) {
-                items(yweetList) {item ->
-                    YweetRow(yweetBindingModel = item, onClickYweet = onClickYweet, onClickAvatar = onClickAvatar)
-                }
-            }
-            PullRefreshIndicator(
-                refreshing = isRefreshing,
-                state = pullRefreshState,
-                modifier = Modifier
-                    .align(Alignment.TopCenter)
-            )
+        PullRefreshIndicator(
+            refreshing = isRefreshing,
+            state = pullRefreshState,
+            modifier = Modifier.align(Alignment.TopCenter)
+        )
 
-            if (isLoading) {
-                CircularProgressIndicator()
-            }
+        if (isLoading) {
+            CircularProgressIndicator()
         }
     }
 }
 
 @Preview
 @Composable
-private fun HomTimelineTemplatePreview() {
+private fun TimelineBlockTemplatePreview() {
     Yatter2025Theme {
         Surface {
-            HomeTimelineTemplate(
+            TimelineBlockTemplate(
                 yweetList = listOf(
                     YweetBindingModel(
                         id = "id1",
@@ -124,7 +95,7 @@ private fun HomTimelineTemplatePreview() {
                 onRefresh = {},
                 onClickPost = {},
                 onClickYweet = {},
-                onClickAvatar = {}
+                onClickAvater = {},
             )
         }
     }

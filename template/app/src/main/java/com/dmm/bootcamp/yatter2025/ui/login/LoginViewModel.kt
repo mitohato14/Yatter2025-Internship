@@ -6,7 +6,7 @@ import com.dmm.bootcamp.yatter2025.common.navigation.Destination
 import com.dmm.bootcamp.yatter2025.domain.model.Password
 import com.dmm.bootcamp.yatter2025.domain.model.Username
 import com.dmm.bootcamp.yatter2025.ui.register.RegisterUserDestination
-import com.dmm.bootcamp.yatter2025.ui.timeline.publictimeline.PublicTimelineDestination
+import com.dmm.bootcamp.yatter2025.ui.timeline.TimelineDestination
 import com.dmm.bootcamp.yatter2025.usecase.login.LoginUseCase
 import com.dmm.bootcamp.yatter2025.usecase.login.LoginUseCaseResult
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -59,7 +59,7 @@ class LoginViewModel(
                 )
             ) {
                 is LoginUseCaseResult.Success -> {
-                    _destination.value = PublicTimelineDestination {
+                    _destination.value = TimelineDestination {
                         popUpTo(LoginDestination().route) {
                             inclusive = true
                         }

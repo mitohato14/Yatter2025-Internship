@@ -6,7 +6,7 @@ import com.dmm.bootcamp.yatter2025.common.navigation.Destination
 import com.dmm.bootcamp.yatter2025.domain.model.Password
 import com.dmm.bootcamp.yatter2025.domain.model.Username
 import com.dmm.bootcamp.yatter2025.ui.login.LoginDestination
-import com.dmm.bootcamp.yatter2025.ui.timeline.publictimeline.PublicTimelineDestination
+import com.dmm.bootcamp.yatter2025.ui.timeline.TimelineDestination
 import com.dmm.bootcamp.yatter2025.usecase.register.RegisterUserUseCase
 import com.dmm.bootcamp.yatter2025.usecase.register.RegisterUserUseCaseResult
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -61,7 +61,7 @@ class RegisterUserViewModel(
                 )
             ) {
                 is RegisterUserUseCaseResult.Success -> {
-                    _destination.value = PublicTimelineDestination {
+                    _destination.value = TimelineDestination {
                         popUpTo(RegisterUserDestination().route) {
                             inclusive = true
                         }
