@@ -14,25 +14,17 @@ class RegisterUserUseCaseImpl(
   private val loginService: LoginService,
 ) : RegisterUserUseCase {
   override suspend fun execute(
-    username: String,
-    password: String,
+    username: Username,
+    password: Password,
   ): RegisterUserUseCaseResult {
-    if (username == "") {
-      return RegisterUserUseCaseResult.Failure.EmptyUsername
-    }
-    if (password == "") {
-      return RegisterUserUseCaseResult.Failure.EmptyPassword
-    }
-    val newUsername = Username(username)
-    val newPassword = Password(password)
-    if (!newPassword.validate()) {
-      return RegisterUserUseCaseResult.Failure.InvalidPassword
-    }
+    if (username.value.isBlank()) return RegisterUserUseCaseResult.Failure.EmptyUsername
+    if (password.value.isBlank()) return RegisterUserUseCaseResult.Failure.EmptyPassword
+    if (!password.validate()) return RegisterUserUseCaseResult.Failure.InvalidPassword
 
     runCatching {
       val me = userRepository.create(
-        newUsername,
-        newPassword,
+        username,
+        password,
       )
       loginUserPreferences.putUsername(me.username.value)
     }.onFailure {
@@ -41,8 +33,8 @@ class RegisterUserUseCaseImpl(
 
     runCatching {
       loginService.execute(
-        newUsername,
-        newPassword,
+        username,
+        password,
       )
     }.onFailure {
       return RegisterUserUseCaseResult.Failure.LoginError(it)
